@@ -26,7 +26,7 @@ class API
     scrambles = (1..n.to_i).map do
       PUZZLES[puzzle.downcase].new.scramble
     end
-    [200, {"Content-Type" => "text/json"}, [JSON.generate(scrambles)]]
+    [200, {"Content-Type" => "application/json"}, [JSON.generate(scrambles)]]
   end
 end
 
