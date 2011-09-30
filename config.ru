@@ -4,7 +4,6 @@ require "bundler/setup"
 require "json"
 require "scrambler"
 
-
 class API
   include Scrambler
 
@@ -21,11 +20,13 @@ class API
 
   def call(env)
     x, puzzle, n = env["PATH_INFO"].split("/")
+
     n = n.nil? ? 5 : n.to_i
     n = 1000 if n > 1000
-    scrambles = (1..n.to_i).map do
+    scrambles = (1..n).map do
       PUZZLES[puzzle.downcase].new.scramble
     end
+
     [200, {"Content-Type" => "application/json"}, [JSON.generate(scrambles)]]
   end
 end
