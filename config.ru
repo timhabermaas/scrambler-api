@@ -21,6 +21,7 @@ class API
   def call(env)
     x, puzzle, n = env["PATH_INFO"].split("/")
 
+    puzzle ||= "3x3x3"
     n = n.nil? ? 5 : n.to_i
     n = 1000 if n > 1000
     scrambles = (1..n).map do
