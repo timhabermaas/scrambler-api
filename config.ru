@@ -14,7 +14,7 @@ class API
               "5x5x5" => FiveByFive,
               "6x6x6" => SixBySix,
               "7x7x7" => SevenBySeven,
-              "clock" => Clock}
+              "clock" => Clock }
 
   def call(env)
     p env
