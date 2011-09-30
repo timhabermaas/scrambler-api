@@ -22,6 +22,7 @@ class API
   def call(env)
     x, puzzle, n = env["PATH_INFO"].split("/")
     n = n.nil? ? 5 : n.to_i
+    n = 1000 if n > 1000
     scrambles = (1..n.to_i).map do
       PUZZLES[puzzle.downcase].new.scramble
     end
