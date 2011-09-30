@@ -8,13 +8,16 @@ require "scrambler"
 class API
   include Scrambler
 
-  PUZZLES = { "2x2x2" => TwoByTwo,
-              "3x3x3" => ThreeByThree,
-              "4x4x4" => FourByFour,
-              "5x5x5" => FiveByFive,
-              "6x6x6" => SixBySix,
-              "7x7x7" => SevenBySeven,
-              "clock" => Clock }
+  PUZZLES = { "2x2x2"    => TwoByTwo,
+              "3x3x3"    => ThreeByThree,
+              "4x4x4"    => FourByFour,
+              "5x5x5"    => FiveByFive,
+              "6x6x6"    => SixBySix,
+              "7x7x7"    => SevenBySeven,
+              "clock"    => Clock,
+              "megaminx" => Megaminx,
+              "pyraminx" => Pyraminx,
+              "square-1" => Square1 }
 
   def call(env)
     p env
