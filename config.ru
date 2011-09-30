@@ -20,7 +20,6 @@ class API
               "square-1" => Square1 }
 
   def call(env)
-    p env
     x, puzzle, n = env["PATH_INFO"].split("/")
     n = n.nil? ? 5 : n.to_i
     scrambles = (1..n.to_i).map do
